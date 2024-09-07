@@ -1,4 +1,3 @@
-export const revalidate = 0;
 import AboutComponet from '@/components/AboutComponet';
 import Contact from '@/components/Contact';
 import HomeComponent from '@/components/HomeComponent';

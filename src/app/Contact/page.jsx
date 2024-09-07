@@ -1,4 +1,3 @@
-export const revalidate = 0;
 import Contact from '@/components/Contact';
 import HomeComponent from '@/components/HomeComponent';
 import AppNavbar from '@/components/MasterLayout/AppNavbar';

@@ -1,4 +1,3 @@
-export const revalidate = 0;
 import HomeComponent from '@/components/HomeComponent';
 import AppNavbar from '@/components/MasterLayout/AppNavbar';
 import Footer from '@/components/MasterLayout/Footer';
