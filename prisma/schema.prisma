@@ -1,0 +1,161 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+model users {
+  id        String     @id @default(auto()) @map("_id") @db.ObjectId
+  firstName String
+  lastName  String     
+  email     String     @unique
+  mobile    String     
+  password  String     
+  otp       String     @default("0")
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now()) @updatedAt
+}
+model home_page{
+  id                                 String     @id @default(auto()) @map("_id") @db.ObjectId
+  top_section_subTitleColor          String?
+  top_section_subTitle               String?
+  top_section_heading_title_1        String?
+  top_section_heading_title_2        String?
+  top_section_heading_title_3        String?
+  top_section_description            String?
+  top_section_button_cover_text      String?
+  top_section_button_cover_link      String?
+  profile_img                        String?
+  createdAt                          DateTime    @default(now())
+  updatedAt                          DateTime    @default(now()) @updatedAt
+}
+
+model about_page {
+  id                                     String  @id @default(auto()) @map("_id") @db.ObjectId
+  top_title_heading                      String?
+  top_title_heading_theme_color          String?
+  top_title_subHeading                   String?
+  about_profile_img                      String? 
+  info_content_email                     String? 
+  info_content_address                   String?
+  social_link_facebook                   String? 
+  social_link_twitter                    String? 
+  social_link_linkdin                    String? 
+  social_link_git                        String? 
+  button_title                           String? 
+  button_link                            String? 
+  personal_section_heading_title         String? 
+  personal_fullName                      String? 
+  personal_phone                         String?
+  personal_email                         String?
+  personal_nationality                   String? 
+  createdAt                              DateTime  @default(now()) @db.Timestamp
+  updatedAt                              DateTime    @default(now()) @updatedAt @db.Timestamp
+}
+
+model service_page {
+  id                  String      @id @default(auto()) @map("_id") @db.ObjectId
+  heading_title       String? 
+  heading_title_color String? 
+  heading_title_des   String?
+  createdAt           DateTime    @default(now()) @db.Timestamp
+  updatedAt           DateTime    @default(now()) @updatedAt @db.Timestamp
+}
+
+model blog_page {
+  id                  String      @id @default(auto()) @map("_id") @db.ObjectId
+  heading_title       String?
+  heading_title_color String?
+  heading_title_des   String?
+  createdAt           DateTime    @default(now()) @db.Timestamp
+  updatedAt           DateTime    @default(now()) @updatedAt @db.Timestamp
+}
+
+model contact_page {
+  id                      String      @id @default(auto()) @map("_id") @db.ObjectId
+  heading_title           String?
+  heading_title_color     String?
+  heading_title_des       String?
+  contact_form_heading    String?
+  contact_info_google_map String?
+  createdAt               DateTime    @default(now()) @db.Timestamp
+  updatedAt               DateTime    @default(now()) @updatedAt @db.Timestamp
+}
+model message{
+  id                      String      @id @default(auto()) @map("_id") @db.ObjectId
+  name                    String?
+  email                   String?
+  website                 String?
+  long_des                String?
+  createdAt               DateTime    @default(now()) @db.Timestamp
+  updatedAt               DateTime    @default(now()) @updatedAt @db.Timestamp
+}
+
+model portfolio {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  title     String? 
+  category  String? 
+  link      String? 
+  img       String?
+  createAt  DateTime    @default(now()) @db.Timestamp
+  updateAt  DateTime    @default(now()) @updatedAt @db.Timestamp
+}
+
+model service {
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  title         String?
+  sub_heading1  String?
+  sub_heading2  String?
+  sub_heading3  String?
+  sub_heading4  String?
+  img           String?
+  createAt      DateTime   @default(now()) @db.Timestamp
+  updateAt      DateTime   @default(now()) @updatedAt @db.Timestamp
+}
+
+model experience {
+  id           String     @id @default(auto()) @map("_id") @db.ObjectId
+  title        String?
+  company      String? 
+  time_section String? 
+  long_des     String?
+  createAt     DateTime   @default(now()) @db.Timestamp
+  updateAt     DateTime   @default(now()) @updatedAt @db.Timestamp
+}
+
+model education {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  title        String?
+  time_section String?
+  long_des     String?
+  createAt     DateTime @default(now()) @db.Timestamp
+  updateAt     DateTime @default(now()) @updatedAt @db.Timestamp
+}
+model testimonial{
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  title_name    String?
+  sub_heading   String?
+  img           String?
+  rating        String?
+  long_des      String?
+  createAt      DateTime @default(now()) @db.Timestamp
+  updateAt      DateTime @default(now()) @updatedAt @db.Timestamp
+}
+model skill {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  title         String?
+  category      String?
+  time_section  String?
+  subject       String?
+  percent       String?
+  createAt      DateTime @default(now()) @db.Timestamp
+  updateAt      DateTime @default(now()) @updatedAt @db.Timestamp
+}
