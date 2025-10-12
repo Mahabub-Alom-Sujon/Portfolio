@@ -1,3 +1,4 @@
+//export const revalidate = 0;
 import AboutComponet from '@/components/AboutComponet';
 import HomeComponent from '@/components/HomeComponent';
 import AppNavbar from '@/components/MasterLayout/AppNavbar';
