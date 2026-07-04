@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useRouter } from "next/navigation";
 import LoaderButton from '@/components/MasterLayout/LoaderButton';
 import { ErrorToast, IsEmpty, SuccessToast,IsEmail } from "@/utility/FormHelper";
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 const Contact = (props) => {
     const router=useRouter();
     const [submit, setSubmit] = useState(false);
@@ -60,7 +62,7 @@ const Contact = (props) => {
                 <div className='row'>
                     <div className='col-lg-12'>
                         <div className='text-center title'>
-                            <h2 className='text-black text-[50px] font-black uppercase'>get in <span className='text-[#50d71e]'>touch</span></h2>
+                            <h2 className='text-black text-[50px] font-black uppercase'>get in <span className='text-[#21bf73]'>touch</span></h2>
                             <div className='divider'></div>
                             <p className="text-black uppercase relative">I’m always open to discussing websites design & Development work very time</p>
                         </div>
@@ -85,13 +87,57 @@ const Contact = (props) => {
                         </div>
                     </div>
                     <div className='col-lg-6 col-md-12'>
-                        <div className="rounded-xl bg-white p-[30px]">
-                            <div className="contact-map">
-                                <iframe
-                                    src={props.data[0].contact_info_google_map}
-                                    height={535}
-                                    width={"100%"}
-                                />
+                        <div className='bg-white rounded-xl p-[30px] h-full shadow-sm'>
+                            <h3 className='text-black text-[32px] font-semibold mb-[30px]'>
+                                Contact Information
+                            </h3>
+
+                            <div className='space-y-6'>
+
+                                {/* Email */}
+                                <div className='flex items-center gap-4 mb-4'>
+                                    <div
+                                        className='w-[60px] h-[60px] rounded-full bg-[#21bf73] flex items-center justify-center text-white text-2xl'>
+                                        <i className="bi bi-envelope-fill">
+                                            <MdEmail />
+                                        </i>
+                                    </div>
+
+                                    <div>
+                                        <p className='text-gray-500 uppercase text-sm mb-1'>
+                                            Email
+                                        </p>
+                                        <a
+                                            href="mailto:mahabub.sujon78@gmail.com"
+                                            className='text-black text-lg font-medium hover:text-[#21bf73] duration-300'
+                                        >
+                                            mahabub.sujon78@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Phone */}
+                                <div className='flex items-center gap-4'>
+                                    <div
+                                        className='w-[60px] h-[60px] rounded-full bg-[#21bf73] flex items-center justify-center text-white text-2xl'>
+                                        <i className="bi bi-telephone-fill">
+                                            <FaPhoneAlt />
+                                        </i>
+                                    </div>
+
+                                    <div>
+                                        <p className='text-gray-500 uppercase text-sm mb-1'>
+                                            Phone
+                                        </p>
+                                        <a
+                                            href="tel:+8801712345678"
+                                            className='text-black text-lg font-medium hover:text-[#21bf73] duration-300'
+                                        >
+                                            +880 1712-345678
+                                        </a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

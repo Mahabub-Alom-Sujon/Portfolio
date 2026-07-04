@@ -1,3 +1,6 @@
+:root{
+    --primary:#21bf73;
+}
 .preloder{
     /* background: #f40101; */
     background: rgba(255, 255, 255, 0.2);
@@ -25,7 +28,7 @@
     fill: none;
     stroke-width: 7;
     /* stroke:#ECF0F3; */
-    stroke: #78c400;
+    stroke: var(--primary);
     stroke-dasharray: 25;
     animation: dash infinite 1.5s ease;
     -webkit-animation: dash infinite 1.5s ease;

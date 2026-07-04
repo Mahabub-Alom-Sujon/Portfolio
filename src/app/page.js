@@ -9,6 +9,8 @@ import Testimonial from '@/components/Testimonial';
 import React, { Suspense } from 'react';
 import { PrismaClient } from "@prisma/client";
 import PortfolioSkeleton from '@/skeleton/Portfolio-skeleton';
+import MySkill from "@/components/MySkill";
+import Educational from "@/components/Educational";
 async function getData() {
   const prisma = new PrismaClient();
   let Hero = await prisma.home_page.findMany({
@@ -50,11 +52,13 @@ const page = async () => {
       <AppNavbar />
       <HomeComponent data={data['Hero']} />
       <AboutComponet data={data['Skill'] } Education={data['Education']} About={data['About']} />
+      <MySkill/>
+      <Educational/>
       <Suspense fallback={<PortfolioSkeleton/>}>
           <Portfolio/>
       </Suspense>
       <Service/>
-      <Testimonial data={data['Testimonial']} />
+      {/*<Testimonial data={data['Testimonial']} />*/}
       <Contact data={data['Contact_map'] } />
       <Footer/>
     </div>

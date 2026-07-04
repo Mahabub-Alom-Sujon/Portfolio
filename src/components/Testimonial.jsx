@@ -8,7 +8,7 @@ const Testimonial =(props) => {
                 <div className='row'>
                     <div className='col-lg-12'>
                         <div className='text-center title'>
-                            <h2 className='text-white text-[50px] font-black uppercase'>Testi<span className='text-[#50d71e]'>monials.</span></h2>
+                            <h2 className='text-white text-[50px] font-black uppercase'>Testi<span className='text-[#21bf73]'>monials.</span></h2>
                             <div className='divider'></div>
                             <p className='text-white uppercase relative'>WHAT OTHER SAY</p>
                         </div>

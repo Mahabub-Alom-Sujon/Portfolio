@@ -15,9 +15,11 @@ const Portfolio =async () => {
                 <div className='row'>
                     <div className='col-12'>
                         <div className='title text-center'>
-                            <h2 className='text-[50px] font-black uppercase'>my <span className='text-[#50d71e]'>Projects</span></h2>
+                            <h2 className='text-[50px] font-black uppercase'>my <span className='text-[#21bf73]'>Projects</span></h2>
                             <div className='divider'></div>
-                        <p className='title-des relative uppercase'>a few recent design and coding projects. Want to see more? Email me.</p>                        </div>                     </div>
+                        <p className='title-des relative uppercase'>a few recent design and coding projects. Want to see more? Email me.</p>
+                        </div>
+                    </div>
                 </div>
                 <div className="row pt-[60px]">
                     {data["Project"]?.map((item, i) => (

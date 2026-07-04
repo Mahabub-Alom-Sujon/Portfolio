@@ -15,7 +15,7 @@ const Service = async () => {
                 <div className='row'>
                     <div className='col-lg-12'>
                         <div className='text-center title'>
-                            <h2 className='text-black text-[50px] font-black uppercase'>Our <span className='text-[#50d71e]'>Service!</span></h2>
+                            <h2 className='text-black text-[50px] font-black uppercase'>Our <span className='text-[#21bf73]'>Service!</span></h2>
                             <div className='divider'></div>
                             <p className='text-black uppercase'>Web design and development encompasses the creation and maintenance of websites.</p>
                         </div>

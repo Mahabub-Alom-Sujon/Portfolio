@@ -6,7 +6,7 @@ const Footer = () => {
                 <div className='row'>
                     <div className='col-lg-12'>
                         <div className='text-center'>
-                            <p className='text-black mb-0 '>Copyright <span className='text-[#72b626]'>mahabub</span> &copy;2024.  All rights reserved</p>
+                            <p className='text-black mb-0 '>Copyright <span className='text-[#72b626]'>mahabub</span> &copy;2026.  All rights reserved</p>
                             <div className=' flex justify-center text-center'>
                                 <img className='w-72' src='/images/logo-3.png' alt='Footer'/>
                             </div>
