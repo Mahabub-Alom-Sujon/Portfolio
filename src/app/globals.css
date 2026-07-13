@@ -508,6 +508,82 @@
   margin-top: 25px;
 
 }
+.portfolio .featured-btn > ul {
+  margin-top: 15px;
+}
+.portfolio .featured-btn > ul > li {
+  display: inline-block;
+  padding: 0px 6px;
+  background: #ffffff;
+  color: var(--primary);
+  margin: 0px 3px;
+  border-radius: 5px;
+}
+.portfolio .featured-btn > ul > li > span{
+  font-size: 12px;
+}
+.portfolio .live-btn{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+.portfolio .live-btn a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+/* GitHub Button */
+.portfolio .github-btn a {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #21bf73;
+}
+
+.portfolio .github-btn a:hover {
+  background: #21bf73;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(33, 191, 115, 0.35);
+}
+
+/* Demo Button */
+.portfolio .demo-btn a {
+  background: #21bf73;
+  color: #fff;
+  border: 2px solid #21bf73;
+}
+
+.portfolio .demo-btn a:hover {
+  background: transparent;
+  color: #21bf73;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(33, 191, 115, 0.35);
+}
+
+/* Icons */
+.portfolio .live-btn a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio .live-btn a:hover span {
+  transform: rotate(-10deg) scale(1.15);
+}
+
 /*----Service----*/
 .service .title .divider{
   position: relative;
@@ -801,6 +877,10 @@
   .about-page{
     padding:50px 0px;
   }
+  .skill-page .skills-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
   .portfolio{
     padding: 50px 0px;
   }
@@ -884,6 +964,18 @@
    #project h2 {
     font-size: 40px !important;
   }
+  .skill-page .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .skill-page .icon-box {
+    width: 85px;
+    height: 85px;
+  }
+  .skill-page .icon-box img {
+    width: 55px;
+    height: 55px;
+  }
    #service h2 {
     font-size: 40px !important;
   }
@@ -959,6 +1051,14 @@
   }
   .about-page .about-title p::after{
     left: 0px;
+  }
+  .skill-page .icon-box {
+    width: 75px;
+    height: 75px;
+  }
+  .skill-page .icon-box img {
+    width: 45px;
+    height: 45px;
   }
   .portfolio {
     padding: 40px 0px;

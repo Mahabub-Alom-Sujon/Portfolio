@@ -144,7 +144,7 @@ const AboutComponet = (props) => {
                         </div>
                     </div>
                     <div className='row mt-5'>
-                        <div className='col-lg-4 col-md-5'>
+                        <div className='col-lg-4 col-md-5 col-sm-12'>
                             <div className='about-left'>
                                 <div className='card border-0'>
                                     <div className='card-body'>
@@ -181,7 +181,7 @@ const AboutComponet = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-8'>
+                        <div className='col-lg-8 col-md-7 col-sm-12'>
                             <div className="card border-0">
                                 <div className="card-body">
                                     <div className='about-right'>
