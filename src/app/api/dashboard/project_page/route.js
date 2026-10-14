@@ -27,6 +27,7 @@ export async function POST(req) {
                     img: reqBody.img,
                     github_link: reqBody.github_link,
                     live_link: reqBody.live_link,
+                    backend_link: reqBody.backend_link
                 },
             });
 
@@ -99,7 +100,6 @@ export async function PUT(req) {
     try {
         const { searchParams } = new URL(req.url);
         const id = searchParams.get("id");
-
         if (!id) {
             return NextResponse.json(
                 {
@@ -109,9 +109,7 @@ export async function PUT(req) {
                 { status: 400 }
             );
         }
-
         const reqBody = await req.json();
-
         const result = await prisma.$transaction(async (tx) => {
             // Update Portfolio
             await tx.portfolio.update({
@@ -124,6 +122,7 @@ export async function PUT(req) {
                     img: reqBody.img,
                     github_link: reqBody.github_link,
                     live_link: reqBody.live_link,
+                    backend_link: reqBody.backend_link
                 },
             });
 

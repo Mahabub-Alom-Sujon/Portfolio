@@ -122,6 +122,7 @@ model portfolio {
   img             String?
   github_link     String?
   live_link       String?
+  backend_link    String?
   technology_list technology_list[]
   createAt        DateTime          @default(now()) @db.Timestamp
   updateAt        DateTime          @default(now()) @updatedAt @db.Timestamp

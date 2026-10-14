@@ -57,7 +57,7 @@ const HomeComponent = (props) => {
                                 </div>
                                 <div className='all-btn'>
                                     <Link
-                                        href="/images/Mahabub_CV_Nextjs_Full-stack_Developer.pdf"
+                                        href="/images/Mahabub_Alom_Sujon_Jr_Full_Stack_Developer.pdf"
                                         target='_blank'
                                         rel="noopener noreferrer">
                                         Download CV
@@ -69,11 +69,11 @@ const HomeComponent = (props) => {
                             <div className="d-flex flex-column gap-3 mt-4">
                                 <div className="d-flex align-items-center gap-2">
                                     <span className="bg-success opacity-50" style={{ height: '1px', width: '32px' }} />
-                                    <p className="text-uppercase fw-bold text-muted small m-0" style={{ letterSpacing: '0.22em' }}>
+                                    <p className="text-uppercase fw-bold text-white small m-0" style={{ letterSpacing: '0.22em' }}>
                                         Find me on
                                     </p>
                                 </div>
-                                <div className="d-flex flex-wrap align-items-center gap-2">
+                                <div className="d-flex flex-wrap align-items-center gap-2 mt-2">
                                     {socialLinks.map((item) => (
                                         <a
                                             key={item.name}

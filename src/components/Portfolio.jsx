@@ -12,6 +12,7 @@ async function getData() {
             category:true,
             github_link:true,
             live_link:true,
+            backend_link:true,
             img:true,
             technology_list:true,
         }
@@ -60,7 +61,7 @@ const Portfolio =async () => {
                                         href={item?.live_link || "#"}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white no-underline transition-colors duration-300 hover:text-theme"
+                                        className="text-white no-underline transition-colors duration-300 hover:text-[#21bf73]"
                                     >
                                         <h3 className="mb-0 mt-2 text-lg font-semibold capitalize sm:text-xl">
                                             {item?.category}
@@ -80,7 +81,7 @@ const Portfolio =async () => {
                                                     key={`${tech?.name}-${index}`}
                                                     className="list-none"
                                                 >
-                                                    <span className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-text transition-colors duration-300 hover:border-theme hover:text-theme sm:text-sm">
+                                                    <span className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-text transition-colors duration-300 hover:border-[#21bf73] hover:text-[#21bf73] sm:text-sm">
                                                         {tech?.name}
                                                     </span>
                                                 </li>
@@ -88,29 +89,45 @@ const Portfolio =async () => {
                                         </ul>
                                     </div>
                                     {/* Action Buttons */}
-                                    <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
-
+                                    <div className="mt-auto flex flex-wrap items-center gap-2 pt-5">
                                         {/* GitHub Button */}
-                                        <Link
-                                            href={item?.github_link || "#"}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:border-theme hover:bg-theme hover:text-white"
-                                        >
-                                            <FaGithub />
-                                            <span>GitHub</span>
-                                        </Link>
-                                        {/* Demo Button */}
-                                        <Link
-                                            href={item?.live_link || "#"}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center justify-center gap-2 rounded-lg bg-theme px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:opacity-80"
-                                        >
-                                            <FaExternalLinkAlt />
-                                            <span>Demo</span>
-                                        </Link>
+                                        {item?.github_link && (
+                                            <Link
+                                                href={item.github_link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center justify-center 1 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:border-[#21bf73] hover:bg-[#21bf73]"
+                                            >
+                                                <FaGithub />
+                                                <span>GitHub</span>
+                                            </Link>
+                                        )}
 
+                                        {/* Backend Button */}
+                                        {item?.backend_link && (
+                                            <Link
+                                                href={item.backend_link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center justify-center gap-1 rounded-lg border border-blue-400/40 px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:border-[#21bf73] hover:bg-[#21bf73]"
+                                            >
+                                                <FaExternalLinkAlt />
+                                                <span>Backend</span>
+                                            </Link>
+                                        )}
+
+                                        {/* Live Demo Button */}
+                                        {item?.live_link && (
+                                            <Link
+                                                href={item.live_link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center justify-center gap-1 rounded-lg bg-[#21bf73] px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:opacity-80"
+                                            >
+                                                <FaExternalLinkAlt />
+                                                <span>Live Demo</span>
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
                             </div>
