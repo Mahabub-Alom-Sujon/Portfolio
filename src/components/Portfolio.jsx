@@ -35,64 +35,87 @@ const Portfolio =async () => {
                 <div className="row pt-[60px]">
                     {/*{JSON.stringify(data['Project'])}*/}
                     {data["Project"]?.map((item, i) => (
-                            <div className="col-lg-4 col-md-6" key={i}>
-                                <div className="group rounded-2xl bg-btn p-[20px]">
-                                    <Link href={item?.live_link} target="_blank">
-                                        <div className="overflow-hidden rounded-2xl">
-                                            <img
-                                                src={item?.img}
-                                                alt=""
-                                                className="w-full h-[250px] transition-all duration-500 group-hover:scale-[110%]"
-                                            />
-                                        </div>
+                        <div className="col-lg-4 col-md-6" key={i}>
+                            <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-btn shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                                {/* Project Image */}
+                                <Link
+                                    href={item?.live_link || "#"}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block overflow-hidden"
+                                >
+                                    <img
+                                        src={item?.img}
+                                        alt={item?.category || "Project preview"}
+                                        className="h-[220px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 sm:h-[250px]"
+                                    />
+                                </Link>
+
+                                {/* Project Content */}
+                                <div className="flex flex-1 flex-col p-5 sm:p-6">
+
+                                    {/* Project Title */}
+                                    <Link
+                                        href={item?.live_link || "#"}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white no-underline transition-colors duration-300 hover:text-theme"
+                                    >
+                                        <h3 className="mb-0 mt-2 text-lg font-semibold capitalize sm:text-xl">
+                                            {item?.category}
+                                        </h3>
                                     </Link>
-                                    <div>
-                                        <div
-                                            className="portfolio-button-open cursor-pointer text-white transition-all duration-300 hover:text-theme">
-                                            <Link className="text-white no-underline" href={item?.live_link } target="_blank">
-                                                <h3 className="mt-[15px] text-[20px] font-medium capitalize md:text-[20px]">
-                                                    {item?.category}
-                                                </h3>
-                                            </Link>
-                                        </div>
-                                        <p className="mt-[16px] text-[14px] text-text">{item?.title}</p>
-                                        <div className="featured-btn">
-                                            <ul>
-                                                {
-                                                    item?.technology_list.map((item, i) => (
-                                                        <li key={i}>
-                                                            <span>{item?.name}</span>
-                                                        </li>
-                                                    ))
-                                                }
-                                                {/*<li>*/}
-                                                {/*<span>{item?.name}</span>*/}
-                                                {/*</li>*/}
-                                                {/*<li>*/}
-                                                {/*    <span>CSS</span>*/}
-                                                {/*</li>*/}
-                                                {/*<li>*/}
-                                                {/*    <span>NextJS</span>*/}
-                                                {/*</li>*/}
-                                                {/*<li>*/}
-                                                {/*    <span>NextJS</span>*/}
-                                                {/*</li>*/}
-                                            </ul>
-                                        </div>
-                                        <div className="live-btn">
-                                            <div className="github-btn">
-                                                <Link href={item?.github_link} target="_blank"><span><FaGithub/></span>Github</Link>
-                                            </div>
-                                            <div className="demo-btn">
-                                                <Link href={item?.live_link} target="_blank"><span><FaExternalLinkAlt/></span>Demo</Link>
-                                            </div>
-                                        </div>
+
+                                    {/* Description */}
+                                    <p className="mt-3 text-sm leading-6 text-text">
+                                        {item?.title}
+                                    </p>
+
+                                    {/* Technologies */}
+                                    <div className="mt-3">
+                                        <ul className="flex flex-wrap gap-2 p-0">
+                                            {item?.technology_list?.map((tech, index) => (
+                                                <li
+                                                    key={`${tech?.name}-${index}`}
+                                                    className="list-none"
+                                                >
+                                                    <span className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-text transition-colors duration-300 hover:border-theme hover:text-theme sm:text-sm">
+                                                        {tech?.name}
+                                                    </span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    {/* Action Buttons */}
+                                    <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
+
+                                        {/* GitHub Button */}
+                                        <Link
+                                            href={item?.github_link || "#"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:border-theme hover:bg-theme hover:text-white"
+                                        >
+                                            <FaGithub />
+                                            <span>GitHub</span>
+                                        </Link>
+                                        {/* Demo Button */}
+                                        <Link
+                                            href={item?.live_link || "#"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center justify-center gap-2 rounded-lg bg-theme px-4 py-2 text-sm font-medium text-white no-underline transition-all duration-300 hover:opacity-80"
+                                        >
+                                            <FaExternalLinkAlt />
+                                            <span>Demo</span>
+                                        </Link>
+
                                     </div>
                                 </div>
                             </div>
-                    ))
-
-                    }
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

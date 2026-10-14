@@ -28,14 +28,14 @@ async function getData() {
     }
   })
   let About = await prisma.about_page.findMany()
-  let Skill = await prisma.skill.findMany({
-    select: {
-      id:true,
-      title: true,
-      percent:true
-    }
-  })
-  let Education = await prisma.education.findMany()
+  // let Skill = await prisma.skill.findMany({
+  //   select: {
+  //     id:true,
+  //     title: true,
+  //     percent:true
+  //   }
+  // })
+  // let Education = await prisma.education.findMany()
   let Testimonial = await prisma.testimonial.findMany()
   let Contact_map = await prisma.contact_page.findMany({
     select: {
@@ -43,7 +43,7 @@ async function getData() {
       contact_info_google_map:true,
     }
   })
-  return {Hero,About,Skill,Education,Testimonial,Contact_map}
+  return {Hero,About,Testimonial,Contact_map}
 }
 const page = async () => {
   const data=await getData()
@@ -51,16 +51,16 @@ const page = async () => {
     <div>
       <AppNavbar />
       <HomeComponent data={data['Hero']} />
-      <AboutComponet data={data['Skill'] } Education={data['Education']} About={data['About']} />
+      <AboutComponet About={data['About']} />
       <MySkill/>
       <Educational/>
       <Suspense fallback={<PortfolioSkeleton/>}>
           <Portfolio/>
       </Suspense>
-      <Service/>
+      {/*<Service/>*/}
       {/*<Testimonial data={data['Testimonial']} />*/}
       <Contact data={data['Contact_map'] } />
-      <Footer/>
+      {/*<Footer/>*/}
     </div>
   );
 };
